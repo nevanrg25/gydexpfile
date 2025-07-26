@@ -4,8 +4,12 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
+  // ✅ IMPORTANT: Add your GitHub repo name here
+  base: "/echoaid-voice-first-platform/",  // must match your repo name
+
   plugins: [
     react(),
+
     // The code below enables dev tools like taking screenshots of your site
     // while it is being developed on chef.convex.dev.
     // Feel free to remove this code if you're no longer developing your app with Chef.
@@ -35,6 +39,7 @@ window.addEventListener('message', async (message) => {
       : null,
     // End of code for taking screenshots on chef.convex.dev.
   ].filter(Boolean),
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
